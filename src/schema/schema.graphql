@@ -11,8 +11,13 @@ type Query {
 
 type Mutation {
   addPlayer(data: CreatePlayer!): Player!
+  updatePlayer(data: UpdatePlayer!): Player!
+
   addTeam(data: CreateTeam!): Team!
+  updateTeam(data: UpdateTeam!): Team!
+
   addMatch(data: CreateMatch!): Match!
+  updateMatch(data: UpdateMatch!): Match!
 }
 
 type Player {
@@ -35,12 +40,27 @@ input CreatePlayer {
   name: String!
 }
 
+input UpdatePlayer {
+  id: Int!
+  name: String!
+}
+
 input CreateTeam {
   id: Int!
   name: String!
 }
 
+input UpdateTeam {
+  id: Int!
+  name: String!
+}
+
 input CreateMatch {
+  id: Int!
+  name: String!
+}
+
+input UpdateMatch {
   id: Int!
   name: String!
 }

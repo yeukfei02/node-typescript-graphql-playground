@@ -96,6 +96,18 @@ const resolvers = {
       playerList.push(player);
       return player;
     },
+    updatePlayer: (root: any, args: any, context: any, info: any) => {
+      const player = {
+        id: args.data.id,
+        name: args.data.name,
+      };
+      playerList.forEach((item, i) => {
+        if (item.id === args.data.id) {
+          item.name = args.data.name;
+        }
+      });
+      return player;
+    },
 
     addTeam: (root: any, args: any, context: any, info: any) => {
       const team = {
@@ -105,6 +117,18 @@ const resolvers = {
       teamList.push(team);
       return team;
     },
+    updateTeam: (root: any, args: any, context: any, info: any) => {
+      const team = {
+        id: args.data.id,
+        name: args.data.name,
+      };
+      teamList.forEach((item, i) => {
+        if (item.id === args.data.id) {
+          item.name = args.data.name;
+        }
+      });
+      return team;
+    },
 
     addMatch: (root: any, args: any, context: any, info: any) => {
       const match = {
@@ -112,6 +136,18 @@ const resolvers = {
         name: args.data.name,
       };
       matchesList.push(match);
+      return match;
+    },
+    updateMatch: (root: any, args: any, context: any, info: any) => {
+      const match = {
+        id: args.data.id,
+        name: args.data.name,
+      };
+      matchesList.forEach((item, i) => {
+        if (item.id === args.data.id) {
+          item.name = args.data.name;
+        }
+      });
       return match;
     },
   },
