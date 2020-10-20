@@ -1,0 +1,46 @@
+type Query {
+  players: [Player!]!
+  player(id: Int!): Player!
+
+  teams: [Team!]!
+  team(id: Int!): Player!
+
+  matches: [Match!]!
+  match(id: Int!): Player!
+}
+
+type Mutation {
+  addPlayer(data: CreatePlayer!): Player!
+  addTeam(data: CreateTeam!): Team!
+  addMatch(data: CreateMatch!): Match!
+}
+
+type Player {
+  id: Int!
+  name: String!
+}
+
+type Team {
+  id: Int!
+  name: String!
+}
+
+type Match {
+  id: Int!
+  name: String!
+}
+
+input CreatePlayer {
+  id: Int!
+  name: String!
+}
+
+input CreateTeam {
+  id: Int!
+  name: String!
+}
+
+input CreateMatch {
+  id: Int!
+  name: String!
+}
