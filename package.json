@@ -1,0 +1,53 @@
+{
+  "name": "node-typescript-graphql-playground",
+  "version": "1.0.0",
+  "main": "app.js",
+  "repository": "https://github.com/yeukfei02/node-typescript-graphql-playground.git",
+  "author": "Donald Wu <yeukfei02@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "graphql-yoga": "^1.18.3",
+    "lodash": "^4.17.20",
+    "moment": "^2.29.1",
+    "moment-timezone": "^0.5.31",
+    "nodemon": "^2.0.6"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.162",
+    "@types/moment-timezone": "^0.5.30",
+    "@types/node": "^14.14.0",
+    "@types/nodemon": "^1.19.0",
+    "@types/ws": "^7.2.7",
+    "@typescript-eslint/eslint-plugin": "^4.5.0",
+    "@typescript-eslint/parser": "^4.5.0",
+    "codecov": "^3.8.0",
+    "eslint": "^7.11.0",
+    "eslint-config-prettier": "^6.13.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "git-cz": "^4.7.1",
+    "husky": "^4.3.0",
+    "jest": "^26.6.0",
+    "prettier": "^2.1.2",
+    "standard-version": "^9.0.0",
+    "ts-jest": "^26.4.1",
+    "ts-node": "^9.0.0",
+    "ts-node-dev": "^1.0.0",
+    "typescript": "^4.0.3",
+    "ws": "^7.3.1"
+  },
+  "scripts": {
+    "dev": "NODE_ENV=development ts-node-dev ./src/app.ts",
+    "start": "rm -rf dist && tsc && NODE_ENV=production nodemon ./dist/app.js",
+    "test": "jest --detectOpenHandles",
+    "lint": "eslint '*/**/*.{ts,tsx}' --quiet --fix",
+    "commit": "npx git-cz",
+    "release": "standard-version"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint",
+      "pre-push": "yarn lint"
+    }
+  }
+}
