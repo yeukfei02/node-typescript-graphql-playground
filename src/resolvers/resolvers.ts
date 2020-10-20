@@ -1,4 +1,4 @@
-const playerList = [
+let playerList = [
   {
     id: 1,
     name: 'player1',
@@ -9,7 +9,7 @@ const playerList = [
   },
 ];
 
-const teamList = [
+let teamList = [
   {
     id: 1,
     name: 'team1',
@@ -20,7 +20,7 @@ const teamList = [
   },
 ];
 
-const matchesList = [
+let matchesList = [
   {
     id: 1,
     name: 'match1',
@@ -108,6 +108,22 @@ const resolvers = {
       });
       return player;
     },
+    deletePlayer: (root: any, args: any, context: any, info: any) => {
+      const id = args.id;
+
+      if (id) {
+        playerList = playerList.filter((item, i) => {
+          if (item.id !== id) {
+            return item;
+          }
+        });
+      }
+
+      const player = {
+        id: args.id,
+      };
+      return player;
+    },
 
     addTeam: (root: any, args: any, context: any, info: any) => {
       const team = {
@@ -129,6 +145,22 @@ const resolvers = {
       });
       return team;
     },
+    deleteTeam: (root: any, args: any, context: any, info: any) => {
+      const id = args.id;
+
+      if (id) {
+        teamList = teamList.filter((item, i) => {
+          if (item.id !== id) {
+            return item;
+          }
+        });
+      }
+
+      const team = {
+        id: args.id,
+      };
+      return team;
+    },
 
     addMatch: (root: any, args: any, context: any, info: any) => {
       const match = {
@@ -148,6 +180,22 @@ const resolvers = {
           item.name = args.data.name;
         }
       });
+      return match;
+    },
+    deleteMatch: (root: any, args: any, context: any, info: any) => {
+      const id = args.id;
+
+      if (id) {
+        matchesList = matchesList.filter((item, i) => {
+          if (item.id !== id) {
+            return item;
+          }
+        });
+      }
+
+      const match = {
+        id: args.id,
+      };
       return match;
     },
   },
