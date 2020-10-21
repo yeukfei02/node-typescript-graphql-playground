@@ -3,4 +3,8 @@ import typeDefs from './schema/schema';
 import resolvers from './resolvers/resolvers';
 
 const server = new GraphQLServer({ typeDefs, resolvers });
-server.start(() => console.log('server is running on localhost:4000'));
+const port = process.env.PORT || 4000;
+const options = { port: port };
+server.start(options, () => {
+  console.log('server is running on localhost:4000');
+});
