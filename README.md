@@ -2,6 +2,8 @@
 
 node-typescript-graphql-playground
 
+documentation: https://documenter.getpostman.com/view/3827865/TVYCAfe4
+
 ## Requirement:
 
 - install yarn

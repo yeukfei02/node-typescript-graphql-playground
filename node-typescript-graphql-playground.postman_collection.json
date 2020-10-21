@@ -1,0 +1,1231 @@
+{
+	"info": {
+		"_postman_id": "440cee11-26c7-47fe-ae7e-5241592d2217",
+		"name": "node-typescript-graphql-playground",
+		"description": "node-typescript-graphql-playground",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "mutations",
+			"item": [
+				{
+					"name": "addPlayer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation addPlayer ($data: CreatePlayer!) {\n    addPlayer (data: $data) {\n        id\n        name\n    }\n}",
+								"variables": "{\n  \"data\": {\n    \"id\": 3,\n    \"name\": \"player3\"\n  }\n}"
+							},
+							"options": {
+								"graphql": {}
+							}
+						},
+						"url": {
+							"raw": "{{rootUrl}}",
+							"host": [
+								"{{rootUrl}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "addPlayer",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "mutation addPlayer ($data: CreatePlayer!) {\n    addPlayer (data: $data) {\n        id\n        name\n    }\n}",
+										"variables": "{\n  \"data\": {\n    \"id\": 3,\n    \"name\": \"player3\"\n  }\n}"
+									},
+									"options": {
+										"graphql": {}
+									}
+								},
+								"url": {
+									"raw": "{{rootUrl}}",
+									"host": [
+										"{{rootUrl}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "48"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 21 Oct 2020 13:52:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"addPlayer\": {\n            \"id\": 3,\n            \"name\": \"player3\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "updatePlayer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation updatePlayer ($data: UpdatePlayer!) {\n    updatePlayer (data: $data) {\n        id\n        name\n    }\n}",
+								"variables": "{\n  \"data\": {\n    \"id\": 2,\n    \"name\": \"player 222222\"\n  }\n}"
+							},
+							"options": {
+								"graphql": {}
+							}
+						},
+						"url": {
+							"raw": "{{rootUrl}}",
+							"host": [
+								"{{rootUrl}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletePlayer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation deletePlayer ($id: Int!) {\n    deletePlayer (id: $id) {\n        id\n    }\n}",
+								"variables": "{\n  \"id\": 1\n}"
+							},
+							"options": {
+								"graphql": {}
+							}
+						},
+						"url": {
+							"raw": "{{rootUrl}}",
+							"host": [
+								"{{rootUrl}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "deletePlayer",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "mutation deletePlayer ($id: Int!) {\n    deletePlayer (id: $id) {\n        id\n    }\n}",
+										"variables": "{\n  \"id\": 1\n}"
+									},
+									"options": {
+										"graphql": {}
+									}
+								},
+								"url": {
+									"raw": "{{rootUrl}}",
+									"host": [
+										"{{rootUrl}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "34"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 21 Oct 2020 13:53:11 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"deletePlayer\": {\n            \"id\": 1\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "addTeam",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation addTeam ($data: CreateTeam!) {\n    addTeam (data: $data) {\n        id\n        name\n    }\n}",
+								"variables": "{\n  \"data\": {\n    \"id\": 3,\n    \"name\": \"team3\"\n  }\n}"
+							},
+							"options": {
+								"graphql": {}
+							}
+						},
+						"url": {
+							"raw": "{{rootUrl}}",
+							"host": [
+								"{{rootUrl}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "addTeam",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "mutation addTeam ($data: CreateTeam!) {\n    addTeam (data: $data) {\n        id\n        name\n    }\n}",
+										"variables": "{\n  \"data\": {\n    \"id\": 3,\n    \"name\": \"team3\"\n  }\n}"
+									},
+									"options": {
+										"graphql": {}
+									}
+								},
+								"url": {
+									"raw": "{{rootUrl}}",
+									"host": [
+										"{{rootUrl}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "44"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 21 Oct 2020 13:53:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"addTeam\": {\n            \"id\": 3,\n            \"name\": \"team3\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "updateTeam",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation updateTeam ($data: UpdateTeam!) {\n    updateTeam (data: $data) {\n        id\n        name\n    }\n}",
+								"variables": "{\n  \"data\": {\n    \"id\": 1,\n    \"name\": \"team 111111\"\n  }\n}"
+							},
+							"options": {
+								"graphql": {}
+							}
+						},
+						"url": {
+							"raw": "{{rootUrl}}",
+							"host": [
+								"{{rootUrl}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "updateTeam",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "mutation updateTeam ($data: UpdateTeam!) {\n    updateTeam (data: $data) {\n        id\n        name\n    }\n}",
+										"variables": "{\n  \"data\": {\n    \"id\": 1,\n    \"name\": \"team 111111\"\n  }\n}"
+									},
+									"options": {
+										"graphql": {}
+									}
+								},
+								"url": {
+									"raw": "{{rootUrl}}",
+									"host": [
+										"{{rootUrl}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "53"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 21 Oct 2020 13:53:35 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"updateTeam\": {\n            \"id\": 1,\n            \"name\": \"team 111111\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "deleteTeam",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation deleteTeam ($id: Int!) {\n    deleteTeam (id: $id) {\n        id\n    }\n}",
+								"variables": "{\n  \"id\": 2\n}"
+							},
+							"options": {
+								"graphql": {}
+							}
+						},
+						"url": {
+							"raw": "{{rootUrl}}",
+							"host": [
+								"{{rootUrl}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "deleteTeam",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "mutation deleteTeam ($id: Int!) {\n    deleteTeam (id: $id) {\n        id\n    }\n}",
+										"variables": "{\n  \"id\": 2\n}"
+									},
+									"options": {
+										"graphql": {}
+									}
+								},
+								"url": {
+									"raw": "{{rootUrl}}",
+									"host": [
+										"{{rootUrl}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "32"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 21 Oct 2020 13:53:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"deleteTeam\": {\n            \"id\": 2\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "addMatch",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation addMatch ($data: CreateMatch!) {\n    addMatch (data: $data) {\n        id\n        name\n    }\n}",
+								"variables": "{\n  \"data\": {\n    \"id\": 3,\n    \"name\": \"match 3\"\n  }\n}"
+							},
+							"options": {
+								"graphql": {}
+							}
+						},
+						"url": {
+							"raw": "{{rootUrl}}",
+							"host": [
+								"{{rootUrl}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "addMatch",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "mutation addMatch ($data: CreateMatch!) {\n    addMatch (data: $data) {\n        id\n        name\n    }\n}",
+										"variables": "{\n  \"data\": {\n    \"id\": 3,\n    \"name\": \"match 3\"\n  }\n}"
+									},
+									"options": {
+										"graphql": {}
+									}
+								},
+								"url": {
+									"raw": "{{rootUrl}}",
+									"host": [
+										"{{rootUrl}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "47"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 21 Oct 2020 13:53:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"addMatch\": {\n            \"id\": 3,\n            \"name\": \"match 3\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "updateMatch",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation updateMatch ($data: UpdateMatch!) {\n    updateMatch (data: $data) {\n        id\n        name\n    }\n}",
+								"variables": "{\n  \"data\": {\n    \"id\": 1,\n    \"name\": \"match 111122223333\"\n  }\n}"
+							},
+							"options": {
+								"graphql": {}
+							}
+						},
+						"url": {
+							"raw": "{{rootUrl}}",
+							"host": [
+								"{{rootUrl}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "updateMatch",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "mutation updateMatch ($data: UpdateMatch!) {\n    updateMatch (data: $data) {\n        id\n        name\n    }\n}",
+										"variables": "{\n  \"data\": {\n    \"id\": 1,\n    \"name\": \"match 111122223333\"\n  }\n}"
+									},
+									"options": {
+										"graphql": {}
+									}
+								},
+								"url": {
+									"raw": "{{rootUrl}}",
+									"host": [
+										"{{rootUrl}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "61"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 21 Oct 2020 13:54:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"updateMatch\": {\n            \"id\": 1,\n            \"name\": \"match 111122223333\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "deleteMatch",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation deleteMatch ($id: Int!) {\n    deleteMatch (id: $id) {\n        id\n    }\n}",
+								"variables": "{\n  \"id\": 2\n}"
+							},
+							"options": {
+								"graphql": {}
+							}
+						},
+						"url": {
+							"raw": "{{rootUrl}}",
+							"host": [
+								"{{rootUrl}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "deleteMatch",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "mutation deleteMatch ($id: Int!) {\n    deleteMatch (id: $id) {\n        id\n    }\n}",
+										"variables": "{\n  \"id\": 2\n}"
+									},
+									"options": {
+										"graphql": {}
+									}
+								},
+								"url": {
+									"raw": "{{rootUrl}}",
+									"host": [
+										"{{rootUrl}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "33"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 21 Oct 2020 13:54:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"deleteMatch\": {\n            \"id\": 2\n        }\n    }\n}"
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "queries",
+			"item": [
+				{
+					"name": "players",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query players {\n    players {\n        id\n        name\n    }\n}",
+								"variables": "{}"
+							},
+							"options": {
+								"graphql": {}
+							}
+						},
+						"url": {
+							"raw": "{{rootUrl}}",
+							"host": [
+								"{{rootUrl}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "players",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "query players {\n    players {\n        id\n        name\n    }\n}",
+										"variables": "{}"
+									},
+									"options": {
+										"graphql": {}
+									}
+								},
+								"url": {
+									"raw": "{{rootUrl}}",
+									"host": [
+										"{{rootUrl}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "74"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 21 Oct 2020 13:50:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"players\": [\n            {\n                \"id\": 1,\n                \"name\": \"player1\"\n            },\n            {\n                \"id\": 2,\n                \"name\": \"player2\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "player",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query player ($id: Int!) {\n    player (id: $id) {\n        id\n        name\n    }\n}",
+								"variables": "{\n  \"id\": 2\n}"
+							},
+							"options": {
+								"graphql": {}
+							}
+						},
+						"url": {
+							"raw": "{{rootUrl}}",
+							"host": [
+								"{{rootUrl}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "player",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "query player ($id: Int!) {\n    player (id: $id) {\n        id\n        name\n    }\n}",
+										"variables": "{\n  \"id\": 2\n}"
+									},
+									"options": {
+										"graphql": {}
+									}
+								},
+								"url": {
+									"raw": "{{rootUrl}}",
+									"host": [
+										"{{rootUrl}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "45"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 21 Oct 2020 13:51:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"player\": {\n            \"id\": 2,\n            \"name\": \"player2\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "teams",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query teams {\n    teams {\n        id\n        name\n    }\n}",
+								"variables": "{}"
+							},
+							"options": {
+								"graphql": {}
+							}
+						},
+						"url": {
+							"raw": "{{rootUrl}}",
+							"host": [
+								"{{rootUrl}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "teams",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "query teams {\n    teams {\n        id\n        name\n    }\n}",
+										"variables": "{}"
+									},
+									"options": {
+										"graphql": {}
+									}
+								},
+								"url": {
+									"raw": "{{rootUrl}}",
+									"host": [
+										"{{rootUrl}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "68"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 21 Oct 2020 13:51:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"teams\": [\n            {\n                \"id\": 1,\n                \"name\": \"team1\"\n            },\n            {\n                \"id\": 2,\n                \"name\": \"team2\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "team",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query team ($id: Int!) {\n    team (id: $id) {\n        id\n        name\n    }\n}",
+								"variables": "{\n  \"id\": 2\n}"
+							},
+							"options": {
+								"graphql": {}
+							}
+						},
+						"url": {
+							"raw": "{{rootUrl}}",
+							"host": [
+								"{{rootUrl}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "team",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "query team ($id: Int!) {\n    team (id: $id) {\n        id\n        name\n    }\n}",
+										"variables": "{\n  \"id\": 2\n}"
+									},
+									"options": {
+										"graphql": {}
+									}
+								},
+								"url": {
+									"raw": "{{rootUrl}}",
+									"host": [
+										"{{rootUrl}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "41"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 21 Oct 2020 13:51:38 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"team\": {\n            \"id\": 2,\n            \"name\": \"team2\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "matches",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query matches {\n    matches {\n        id\n        name\n    }\n}",
+								"variables": "{}"
+							},
+							"options": {
+								"graphql": {}
+							}
+						},
+						"url": {
+							"raw": "{{rootUrl}}",
+							"host": [
+								"{{rootUrl}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "matches",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "query matches {\n    matches {\n        id\n        name\n    }\n}",
+										"variables": "{}"
+									},
+									"options": {
+										"graphql": {}
+									}
+								},
+								"url": {
+									"raw": "{{rootUrl}}",
+									"host": [
+										"{{rootUrl}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "72"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 21 Oct 2020 13:51:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"matches\": [\n            {\n                \"id\": 1,\n                \"name\": \"match1\"\n            },\n            {\n                \"id\": 2,\n                \"name\": \"match2\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "match",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query match ($id: Int!) {\n    match (id: $id) {\n        id\n        name\n    }\n}",
+								"variables": "{\n  \"id\": 1\n}"
+							},
+							"options": {
+								"graphql": {}
+							}
+						},
+						"url": {
+							"raw": "{{rootUrl}}",
+							"host": [
+								"{{rootUrl}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "match",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "graphql",
+									"graphql": {
+										"query": "query match ($id: Int!) {\n    match (id: $id) {\n        id\n        name\n    }\n}",
+										"variables": "{\n  \"id\": 1\n}"
+									},
+									"options": {
+										"graphql": {}
+									}
+								},
+								"url": {
+									"raw": "{{rootUrl}}",
+									"host": [
+										"{{rootUrl}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "43"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 21 Oct 2020 13:51:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"match\": {\n            \"id\": 1,\n            \"name\": \"match1\"\n        }\n    }\n}"
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "d6cf8ddf-caf1-4cd1-8120-11bef6fdcd63",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "c48508b9-99b1-4f4c-9e9e-9cc281e5bb88",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
