@@ -1,3 +1,3 @@
-const typeDefs = __dirname + '/schema.graphql';
+const typeDefs = 'src/schema/schema.graphql';
 
 export default typeDefs;
