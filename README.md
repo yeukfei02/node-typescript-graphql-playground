@@ -4,6 +4,10 @@ node-typescript-graphql-playground
 
 documentation: https://documenter.getpostman.com/view/3827865/TVYCAfe4
 
+api url:
+
+https://node-ts-graphql-playground.herokuapp.com/
+
 ## Requirement:
 
 - install yarn
