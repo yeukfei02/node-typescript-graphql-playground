@@ -29,4 +29,20 @@ $ yarn run test
 $ yarn run lint
 ```
 
+## Docker:
+
+```
+// build images and start container in one line
+docker-compose up -d --build
+
+// go inside container
+docker exec -it <containerId> /bin/bash
+
+// check container logs
+docker logs <containerId>
+
+// remove and stop container
+docker-compose down
+```
+
 open localhost:4000

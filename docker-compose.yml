@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+  web:
+    container_name: node-typescript-graphql-playground
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - 4000:4000
+    restart: always
+    environment:
+      - NODE_ENV=production
