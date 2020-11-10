@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.8](https://github.com/yeukfei02/node-typescript-graphql-playground/compare/v0.1.7...v0.1.8) (2020-11-10)
+
+
+### Features
+
+* 🎸 add cors and playground ([4dbd249](https://github.com/yeukfei02/node-typescript-graphql-playground/commit/4dbd2493a1eecf98474238e6a294bf58603de121))
+
 ### [0.1.7](https://github.com/yeukfei02/node-typescript-graphql-playground/compare/v0.1.6...v0.1.7) (2020-11-10)
 
 
