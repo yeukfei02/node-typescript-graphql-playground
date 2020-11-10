@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.7](https://github.com/yeukfei02/node-typescript-graphql-playground/compare/v0.1.6...v0.1.7) (2020-11-10)
+
+
+### Bug Fixes
+
+* 🐛 fix port problem ([cfddc7e](https://github.com/yeukfei02/node-typescript-graphql-playground/commit/cfddc7e63cd34bb80c08e85d72086add242e03b9))
+
 ### [0.1.6](https://github.com/yeukfei02/node-typescript-graphql-playground/compare/v0.1.5...v0.1.6) (2020-11-10)
 
 
