@@ -87,6 +87,7 @@ const resolvers = {
       return match[0];
     },
   },
+
   Mutation: {
     addPlayer: (root: any, args: any, context: any, info: any) => {
       const player = {
