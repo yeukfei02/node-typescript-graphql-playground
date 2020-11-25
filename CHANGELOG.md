@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.11](https://github.com/yeukfei02/node-typescript-graphql-playground/compare/v0.1.10...v0.1.11) (2020-11-25)
+
+
+### Features
+
+* 🎸 add tracing ([53d9915](https://github.com/yeukfei02/node-typescript-graphql-playground/commit/53d99151d0f0b9368c9bf0cfdd49ce345518a635))
+
 ### [0.1.10](https://github.com/yeukfei02/node-typescript-graphql-playground/compare/v0.1.9...v0.1.10) (2020-11-20)
 
 ### [0.1.9](https://github.com/yeukfei02/node-typescript-graphql-playground/compare/v0.1.8...v0.1.9) (2020-11-14)
