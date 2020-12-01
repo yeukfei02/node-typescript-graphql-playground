@@ -33,10 +33,10 @@ let matchesList = [
 
 const resolvers = {
   Query: {
-    players: (root: any, args: any, context: any, info: any) => {
+    players: (parent: any, args: any, context: any, info: any) => {
       return playerList;
     },
-    player: (root: any, args: any, context: any, info: any) => {
+    player: (parent: any, args: any, context: any, info: any) => {
       const id = args.id;
 
       let player = null;
@@ -51,10 +51,10 @@ const resolvers = {
       return player[0];
     },
 
-    teams: (root: any, args: any, context: any, info: any) => {
+    teams: (parent: any, args: any, context: any, info: any) => {
       return teamList;
     },
-    team: (root: any, args: any, context: any, info: any) => {
+    team: (parent: any, args: any, context: any, info: any) => {
       const id = args.id;
 
       let team = null;
@@ -69,10 +69,10 @@ const resolvers = {
       return team[0];
     },
 
-    matches: (root: any, args: any, context: any, info: any) => {
+    matches: (parent: any, args: any, context: any, info: any) => {
       return matchesList;
     },
-    match: (root: any, args: any, context: any, info: any) => {
+    match: (parent: any, args: any, context: any, info: any) => {
       const id = args.id;
 
       let match = null;
@@ -89,7 +89,7 @@ const resolvers = {
   },
 
   Mutation: {
-    addPlayer: (root: any, args: any, context: any, info: any) => {
+    addPlayer: (parent: any, args: any, context: any, info: any) => {
       const player = {
         id: args.data.id,
         name: args.data.name,
@@ -97,7 +97,7 @@ const resolvers = {
       playerList.push(player);
       return player;
     },
-    updatePlayer: (root: any, args: any, context: any, info: any) => {
+    updatePlayer: (parent: any, args: any, context: any, info: any) => {
       const player = {
         id: args.data.id,
         name: args.data.name,
@@ -109,7 +109,7 @@ const resolvers = {
       });
       return player;
     },
-    deletePlayer: (root: any, args: any, context: any, info: any) => {
+    deletePlayer: (parent: any, args: any, context: any, info: any) => {
       const id = args.id;
 
       if (id) {
@@ -126,7 +126,7 @@ const resolvers = {
       return player;
     },
 
-    addTeam: (root: any, args: any, context: any, info: any) => {
+    addTeam: (parent: any, args: any, context: any, info: any) => {
       const team = {
         id: args.data.id,
         name: args.data.name,
@@ -134,7 +134,7 @@ const resolvers = {
       teamList.push(team);
       return team;
     },
-    updateTeam: (root: any, args: any, context: any, info: any) => {
+    updateTeam: (parent: any, args: any, context: any, info: any) => {
       const team = {
         id: args.data.id,
         name: args.data.name,
@@ -146,7 +146,7 @@ const resolvers = {
       });
       return team;
     },
-    deleteTeam: (root: any, args: any, context: any, info: any) => {
+    deleteTeam: (parent: any, args: any, context: any, info: any) => {
       const id = args.id;
 
       if (id) {
@@ -163,7 +163,7 @@ const resolvers = {
       return team;
     },
 
-    addMatch: (root: any, args: any, context: any, info: any) => {
+    addMatch: (parent: any, args: any, context: any, info: any) => {
       const match = {
         id: args.data.id,
         name: args.data.name,
@@ -171,7 +171,7 @@ const resolvers = {
       matchesList.push(match);
       return match;
     },
-    updateMatch: (root: any, args: any, context: any, info: any) => {
+    updateMatch: (parent: any, args: any, context: any, info: any) => {
       const match = {
         id: args.data.id,
         name: args.data.name,
@@ -183,7 +183,7 @@ const resolvers = {
       });
       return match;
     },
-    deleteMatch: (root: any, args: any, context: any, info: any) => {
+    deleteMatch: (parent: any, args: any, context: any, info: any) => {
       const id = args.id;
 
       if (id) {
