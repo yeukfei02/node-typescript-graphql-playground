@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.13](https://github.com/yeukfei02/node-typescript-graphql-playground/compare/v0.1.12...v0.1.13) (2021-01-23)
+
+
+### Bug Fixes
+
+* 🐛 fix package.json ([5700e80](https://github.com/yeukfei02/node-typescript-graphql-playground/commit/5700e806e09220f86017647b5f9d983715de6068))
+* 🐛 fix package.json ([4709214](https://github.com/yeukfei02/node-typescript-graphql-playground/commit/47092147e970aaeb42fcee9143754e862d4b3995))
+
 ### [0.1.12](https://github.com/yeukfei02/node-typescript-graphql-playground/compare/v0.1.11...v0.1.12) (2021-01-23)
 
 
