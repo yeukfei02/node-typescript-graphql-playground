@@ -29,6 +29,7 @@
     "moment-timezone": "^0.5.31",
     "nodemon": "^2.0.6",
     "prettier": "^2.1.2",
+    "rimraf": "^3.0.2",
     "standard-version": "^9.0.0",
     "ts-jest": "^26.4.1",
     "ts-node": "^9.0.0",
@@ -37,7 +38,7 @@
   },
   "scripts": {
     "dev": "NODE_ENV=development ts-node-dev ./src/app.ts",
-    "start": "rm -rf dist && tsc && NODE_ENV=production nodemon ./dist/app.js",
+    "start": "rimraf dist && tsc && NODE_ENV=production nodemon ./dist/app.js",
     "test": "jest --detectOpenHandles",
     "lint": "eslint '*/**/*.{ts,tsx}' --quiet --fix",
     "commit": "git-cz",
