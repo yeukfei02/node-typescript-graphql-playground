@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.14](https://github.com/yeukfei02/node-typescript-graphql-playground/compare/v0.1.13...v0.1.14) (2021-03-21)
+
+
+### Features
+
+* 🎸 add rimraf lib ([ed041f7](https://github.com/yeukfei02/node-typescript-graphql-playground/commit/ed041f742c259bcc64e23285c57f24185308dac8))
+
 ### [0.1.13](https://github.com/yeukfei02/node-typescript-graphql-playground/compare/v0.1.12...v0.1.13) (2021-01-23)
 
 
