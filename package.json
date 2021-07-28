@@ -12,7 +12,8 @@
     "graphql": "^15.4.0",
     "lodash": "^4.17.20",
     "moment": "^2.29.1",
-    "moment-timezone": "^0.5.31"
+    "moment-timezone": "^0.5.31",
+    "nexus": "^1.1.0"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.162",
@@ -39,7 +40,7 @@
   },
   "scripts": {
     "dev": "NODE_ENV=development ts-node-dev ./src/app.ts",
-    "start": "NODE_ENV=production node ./dist/app.js",
+    "start": "NODE_ENV=production node ./dist/src/app.js",
     "build": "rimraf dist && tsc",
     "heroku-postbuild": "yarn run build",
     "test": "jest --detectOpenHandles",
