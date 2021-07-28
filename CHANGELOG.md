@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.16](https://github.com/yeukfei02/node-typescript-graphql-playground/compare/v0.1.15...v0.1.16) (2021-07-28)
+
+
+### Features
+
+* 🎸 add nexus lib for graphql ([691d361](https://github.com/yeukfei02/node-typescript-graphql-playground/commit/691d361d41c46f09c5651309deff2d4af14ad9ca))
+
 ### [0.1.15](https://github.com/yeukfei02/node-typescript-graphql-playground/compare/v0.1.14...v0.1.15) (2021-07-11)
 
 
