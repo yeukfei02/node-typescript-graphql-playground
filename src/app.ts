@@ -1,11 +1,7 @@
 import { ApolloServer } from 'apollo-server';
-// import typeDefs from './schema/typeDefs';
-// import resolvers from './resolvers/resolvers';
 import { schema } from '../api/schema';
 
 const server = new ApolloServer({
-  // typeDefs,
-  // resolvers,
   schema,
   cors: true,
   tracing: true,
