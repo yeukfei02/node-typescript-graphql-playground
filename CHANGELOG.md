@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.17](https://github.com/yeukfei02/node-typescript-graphql-playground/compare/v0.1.16...v0.1.17) (2021-07-29)
+
+
+### Bug Fixes
+
+* 🐛 fix query and mutation in schema.ts ([1ecc9bb](https://github.com/yeukfei02/node-typescript-graphql-playground/commit/1ecc9bb092a9ae38d841c022ef24a1623c07a183))
+
 ### [0.1.16](https://github.com/yeukfei02/node-typescript-graphql-playground/compare/v0.1.15...v0.1.16) (2021-07-28)
 
 
