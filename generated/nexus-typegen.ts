@@ -3,105 +3,113 @@
  * Do not make changes to this file directly
  */
 
-
-
-
-
-
-
 declare global {
-  interface NexusGen extends NexusGenTypes {}
+  type NexusGen = NexusGenTypes;
 }
 
 export interface NexusGenInputs {
-  CreateMatch: { // input type
+  CreateMatch: {
+    // input type
     id: number; // Int!
     name: string; // String!
-  }
-  CreatePlayer: { // input type
+  };
+  CreatePlayer: {
+    // input type
     id: number; // Int!
     name: string; // String!
-  }
-  CreateTeam: { // input type
+  };
+  CreateTeam: {
+    // input type
     id: number; // Int!
     name: string; // String!
-  }
-  UpdateMatch: { // input type
+  };
+  UpdateMatch: {
+    // input type
     id: number; // Int!
     name: string; // String!
-  }
-  UpdatePlayer: { // input type
+  };
+  UpdatePlayer: {
+    // input type
     id: number; // Int!
     name: string; // String!
-  }
-  UpdateTeam: { // input type
+  };
+  UpdateTeam: {
+    // input type
     id: number; // Int!
     name: string; // String!
-  }
+  };
 }
 
-export interface NexusGenEnums {
-}
+export interface NexusGenEnums {}
 
 export interface NexusGenScalars {
-  String: string
-  Int: number
-  Float: number
-  Boolean: boolean
-  ID: string
+  String: string;
+  Int: number;
+  Float: number;
+  Boolean: boolean;
+  ID: string;
 }
 
 export interface NexusGenObjects {
-  DeleteMatchResult: { // root type
+  DeleteMatchResult: {
+    // root type
     id: number; // Int!
-  }
-  DeletePlayerResult: { // root type
+  };
+  DeletePlayerResult: {
+    // root type
     id: number; // Int!
-  }
-  DeleteTeamResult: { // root type
+  };
+  DeleteTeamResult: {
+    // root type
     id: number; // Int!
-  }
-  Match: { // root type
+  };
+  Match: {
+    // root type
     id: number; // Int!
     name: string; // String!
-  }
+  };
   Mutation: {};
-  Player: { // root type
+  Player: {
+    // root type
     id: number; // Int!
     name: string; // String!
-  }
+  };
   Query: {};
-  Team: { // root type
+  Team: {
+    // root type
     id: number; // Int!
     name: string; // String!
-  }
+  };
 }
 
-export interface NexusGenInterfaces {
-}
+export interface NexusGenInterfaces {}
 
-export interface NexusGenUnions {
-}
+export interface NexusGenUnions {}
 
-export type NexusGenRootTypes = NexusGenObjects
+export type NexusGenRootTypes = NexusGenObjects;
 
-export type NexusGenAllTypes = NexusGenRootTypes & NexusGenScalars
+export type NexusGenAllTypes = NexusGenRootTypes & NexusGenScalars;
 
 export interface NexusGenFieldTypes {
-  DeleteMatchResult: { // field return type
+  DeleteMatchResult: {
+    // field return type
     id: number; // Int!
-  }
-  DeletePlayerResult: { // field return type
+  };
+  DeletePlayerResult: {
+    // field return type
     id: number; // Int!
-  }
-  DeleteTeamResult: { // field return type
+  };
+  DeleteTeamResult: {
+    // field return type
     id: number; // Int!
-  }
-  Match: { // field return type
+  };
+  Match: {
+    // field return type
     id: number; // Int!
     name: string; // String!
-  }
-  Mutation: { // field return type
+  };
+  Mutation: {
+    // field return type
     addMatch: NexusGenRootTypes['Match']; // Match!
     addPlayer: NexusGenRootTypes['Player']; // Player!
     addTeam: NexusGenRootTypes['Team']; // Team!
@@ -111,116 +119,137 @@ export interface NexusGenFieldTypes {
     updateMatch: NexusGenRootTypes['Match']; // Match!
     updatePlayer: NexusGenRootTypes['Player']; // Player!
     updateTeam: NexusGenRootTypes['Team']; // Team!
-  }
-  Player: { // field return type
+  };
+  Player: {
+    // field return type
     id: number; // Int!
     name: string; // String!
-  }
-  Query: { // field return type
+  };
+  Query: {
+    // field return type
     match: NexusGenRootTypes['Match']; // Match!
     matches: NexusGenRootTypes['Match'][]; // [Match!]!
     player: NexusGenRootTypes['Player']; // Player!
     players: NexusGenRootTypes['Player'][]; // [Player!]!
     team: NexusGenRootTypes['Team']; // Team!
     teams: NexusGenRootTypes['Team'][]; // [Team!]!
-  }
-  Team: { // field return type
+  };
+  Team: {
+    // field return type
     id: number; // Int!
     name: string; // String!
-  }
+  };
 }
 
 export interface NexusGenFieldTypeNames {
-  DeleteMatchResult: { // field return type name
-    id: 'Int'
-  }
-  DeletePlayerResult: { // field return type name
-    id: 'Int'
-  }
-  DeleteTeamResult: { // field return type name
-    id: 'Int'
-  }
-  Match: { // field return type name
-    id: 'Int'
-    name: 'String'
-  }
-  Mutation: { // field return type name
-    addMatch: 'Match'
-    addPlayer: 'Player'
-    addTeam: 'Team'
-    deleteMatch: 'DeleteMatchResult'
-    deletePlayer: 'DeletePlayerResult'
-    deleteTeam: 'DeleteTeamResult'
-    updateMatch: 'Match'
-    updatePlayer: 'Player'
-    updateTeam: 'Team'
-  }
-  Player: { // field return type name
-    id: 'Int'
-    name: 'String'
-  }
-  Query: { // field return type name
-    match: 'Match'
-    matches: 'Match'
-    player: 'Player'
-    players: 'Player'
-    team: 'Team'
-    teams: 'Team'
-  }
-  Team: { // field return type name
-    id: 'Int'
-    name: 'String'
-  }
+  DeleteMatchResult: {
+    // field return type name
+    id: 'Int';
+  };
+  DeletePlayerResult: {
+    // field return type name
+    id: 'Int';
+  };
+  DeleteTeamResult: {
+    // field return type name
+    id: 'Int';
+  };
+  Match: {
+    // field return type name
+    id: 'Int';
+    name: 'String';
+  };
+  Mutation: {
+    // field return type name
+    addMatch: 'Match';
+    addPlayer: 'Player';
+    addTeam: 'Team';
+    deleteMatch: 'DeleteMatchResult';
+    deletePlayer: 'DeletePlayerResult';
+    deleteTeam: 'DeleteTeamResult';
+    updateMatch: 'Match';
+    updatePlayer: 'Player';
+    updateTeam: 'Team';
+  };
+  Player: {
+    // field return type name
+    id: 'Int';
+    name: 'String';
+  };
+  Query: {
+    // field return type name
+    match: 'Match';
+    matches: 'Match';
+    player: 'Player';
+    players: 'Player';
+    team: 'Team';
+    teams: 'Team';
+  };
+  Team: {
+    // field return type name
+    id: 'Int';
+    name: 'String';
+  };
 }
 
 export interface NexusGenArgTypes {
   Mutation: {
-    addMatch: { // args
+    addMatch: {
+      // args
       data: NexusGenInputs['CreateMatch']; // CreateMatch!
-    }
-    addPlayer: { // args
+    };
+    addPlayer: {
+      // args
       data: NexusGenInputs['CreatePlayer']; // CreatePlayer!
-    }
-    addTeam: { // args
+    };
+    addTeam: {
+      // args
       data: NexusGenInputs['CreateTeam']; // CreateTeam!
-    }
-    deleteMatch: { // args
+    };
+    deleteMatch: {
+      // args
       id: number; // Int!
-    }
-    deletePlayer: { // args
+    };
+    deletePlayer: {
+      // args
       id: number; // Int!
-    }
-    deleteTeam: { // args
+    };
+    deleteTeam: {
+      // args
       id: number; // Int!
-    }
-    updateMatch: { // args
+    };
+    updateMatch: {
+      // args
       data: NexusGenInputs['UpdateMatch']; // UpdateMatch!
-    }
-    updatePlayer: { // args
+    };
+    updatePlayer: {
+      // args
       data: NexusGenInputs['UpdatePlayer']; // UpdatePlayer!
-    }
-    updateTeam: { // args
+    };
+    updateTeam: {
+      // args
       data: NexusGenInputs['UpdateTeam']; // UpdateTeam!
-    }
-  }
+    };
+  };
   Query: {
-    match: { // args
+    match: {
+      // args
       id: number; // Int!
-    }
-    player: { // args
+    };
+    player: {
+      // args
       id: number; // Int!
-    }
-    team: { // args
+    };
+    team: {
+      // args
       id: number; // Int!
-    }
-  }
+    };
+  };
 }
 
-export interface NexusGenAbstractTypeMembers {
-}
+export interface NexusGenAbstractTypeMembers {}
 
-export interface NexusGenTypeInterfaces {
-}
+export interface NexusGenTypeInterfaces {}
 
 export type NexusGenObjectNames = keyof NexusGenObjects;
 
@@ -240,11 +269,11 @@ export type NexusGenAbstractsUsingStrategyResolveType = never;
 
 export type NexusGenFeaturesConfig = {
   abstractTypeStrategies: {
-    isTypeOf: false
-    resolveType: true
-    __typename: false
-  }
-}
+    isTypeOf: false;
+    resolveType: true;
+    __typename: false;
+  };
+};
 
 export interface NexusGenTypes {
   context: any;
@@ -263,8 +292,13 @@ export interface NexusGenTypes {
   scalarNames: NexusGenScalarNames;
   unionNames: NexusGenUnionNames;
   allInputTypes: NexusGenTypes['inputNames'] | NexusGenTypes['enumNames'] | NexusGenTypes['scalarNames'];
-  allOutputTypes: NexusGenTypes['objectNames'] | NexusGenTypes['enumNames'] | NexusGenTypes['unionNames'] | NexusGenTypes['interfaceNames'] | NexusGenTypes['scalarNames'];
-  allNamedTypes: NexusGenTypes['allInputTypes'] | NexusGenTypes['allOutputTypes']
+  allOutputTypes:
+    | NexusGenTypes['objectNames']
+    | NexusGenTypes['enumNames']
+    | NexusGenTypes['unionNames']
+    | NexusGenTypes['interfaceNames']
+    | NexusGenTypes['scalarNames'];
+  allNamedTypes: NexusGenTypes['allInputTypes'] | NexusGenTypes['allOutputTypes'];
   abstractTypes: NexusGenTypes['interfaceNames'] | NexusGenTypes['unionNames'];
   abstractTypeMembers: NexusGenAbstractTypeMembers;
   objectsUsingAbstractStrategyIsTypeOf: NexusGenObjectsUsingAbstractStrategyIsTypeOf;
@@ -272,18 +306,11 @@ export interface NexusGenTypes {
   features: NexusGenFeaturesConfig;
 }
 
-
 declare global {
-  interface NexusGenPluginTypeConfig<TypeName extends string> {
-  }
-  interface NexusGenPluginInputTypeConfig<TypeName extends string> {
-  }
-  interface NexusGenPluginFieldConfig<TypeName extends string, FieldName extends string> {
-  }
-  interface NexusGenPluginInputFieldConfig<TypeName extends string, FieldName extends string> {
-  }
-  interface NexusGenPluginSchemaConfig {
-  }
-  interface NexusGenPluginArgConfig {
-  }
+  interface NexusGenPluginTypeConfig<TypeName extends string> {}
+  interface NexusGenPluginInputTypeConfig<TypeName extends string> {}
+  interface NexusGenPluginFieldConfig<TypeName extends string, FieldName extends string> {}
+  interface NexusGenPluginInputFieldConfig<TypeName extends string, FieldName extends string> {}
+  interface NexusGenPluginSchemaConfig {}
+  interface NexusGenPluginArgConfig {}
 }
