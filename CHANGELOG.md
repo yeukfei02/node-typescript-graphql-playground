@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.19](https://github.com/yeukfei02/node-typescript-graphql-playground/compare/v0.1.18...v0.1.19) (2021-08-07)
+
+
+### Bug Fixes
+
+* 🐛 add exclude in tsconfig.json ([c1a6a72](https://github.com/yeukfei02/node-typescript-graphql-playground/commit/c1a6a728e6571292a6bf8d8966143abfd8b0170f))
+* 🐛 move apollo-server-testing to devDependencies ([4170415](https://github.com/yeukfei02/node-typescript-graphql-playground/commit/417041500f588737271a30c9bb15678ad426ec3e))
+
+### [0.1.18](https://github.com/yeukfei02/node-typescript-graphql-playground/compare/v0.1.17...v0.1.18) (2021-07-31)
+
+
+### Bug Fixes
+
+* 🐛 add generated folder ([7cb4221](https://github.com/yeukfei02/node-typescript-graphql-playground/commit/7cb42211cd8a921cf7827bbcb50dcb24f1a25b78))
+
 ### [0.1.17](https://github.com/yeukfei02/node-typescript-graphql-playground/compare/v0.1.16...v0.1.17) (2021-07-29)
 
 
