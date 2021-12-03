@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.20](https://github.com/yeukfei02/node-typescript-graphql-playground/compare/v0.1.19...v0.1.20) (2021-12-03)
+
+
+### Bug Fixes
+
+* 🐛 remove apollo-server-testing and update jest ([2a0781f](https://github.com/yeukfei02/node-typescript-graphql-playground/commit/2a0781f75eb8af3b9345e353536ac131c8553abc))
+
 ### [0.1.19](https://github.com/yeukfei02/node-typescript-graphql-playground/compare/v0.1.18...v0.1.19) (2021-08-07)
 
 
