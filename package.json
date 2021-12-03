@@ -1,6 +1,6 @@
 {
   "name": "node-typescript-graphql-playground",
-  "version": "0.1.20",
+  "version": "0.2.0",
   "main": "app.js",
   "repository": "https://github.com/yeukfei02/node-typescript-graphql-playground.git",
   "author": "Donald Wu <yeukfei02@gmail.com>",
