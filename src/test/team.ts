@@ -1,12 +1,9 @@
 import { ApolloServer } from 'apollo-server';
 import { schema } from '../../api/schema';
 
-import { createTestClient } from 'apollo-server-testing';
-
 const server = new ApolloServer({
   schema,
 });
-const { query, mutate } = createTestClient(server);
 
 export const teamTest = (): void => {
   describe('team test', () => {
@@ -19,7 +16,7 @@ export const teamTest = (): void => {
             }
         }
       `;
-      const response = await query({ query: TEAMS, variables: {} });
+      const response = await server.executeOperation({ query: TEAMS, variables: {} });
       console.log('response = ', response);
 
       expect(response.data).toBeDefined();
@@ -36,7 +33,7 @@ export const teamTest = (): void => {
             }
         }
         `;
-      const response = await query({ query: team, variables: { id: 2 } });
+      const response = await server.executeOperation({ query: team, variables: { id: 2 } });
       console.log('response = ', response);
 
       expect(response.data).toBeDefined();
@@ -53,7 +50,10 @@ export const teamTest = (): void => {
             }
         }
         `;
-      const response = await mutate({ mutation: ADD_TEAM, variables: { data: { id: 3, name: 'team 3' } } });
+      const response = await server.executeOperation({
+        query: ADD_TEAM,
+        variables: { data: { id: 3, name: 'team 3' } },
+      });
       console.log('response = ', response);
 
       expect(response.data).toBeDefined();
@@ -70,8 +70,8 @@ export const teamTest = (): void => {
             }
         }
         `;
-      const response = await mutate({
-        mutation: UPDATE_TEAM,
+      const response = await server.executeOperation({
+        query: UPDATE_TEAM,
         variables: { data: { id: 1, name: 'team 111112222233333' } },
       });
       console.log('response = ', response);
@@ -89,7 +89,7 @@ export const teamTest = (): void => {
             }
         }
         `;
-      const response = await mutate({ mutation: DELETE_TEAM, variables: { id: 1 } });
+      const response = await server.executeOperation({ query: DELETE_TEAM, variables: { id: 1 } });
       console.log('response = ', response);
 
       expect(response.data).toBeDefined();
