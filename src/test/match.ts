@@ -1,12 +1,9 @@
 import { ApolloServer } from 'apollo-server';
 import { schema } from '../../api/schema';
 
-import { createTestClient } from 'apollo-server-testing';
-
 const server = new ApolloServer({
   schema,
 });
-const { query, mutate } = createTestClient(server);
 
 export const matchTest = (): void => {
   describe('match test', () => {
@@ -19,7 +16,7 @@ export const matchTest = (): void => {
             }
         }
       `;
-      const response = await query({ query: matches, variables: {} });
+      const response = await server.executeOperation({ query: matches, variables: {} });
       console.log('response = ', response);
 
       expect(response.data).toBeDefined();
@@ -36,7 +33,7 @@ export const matchTest = (): void => {
                 }
             }
         `;
-      const response = await query({ query: match, variables: { id: 1 } });
+      const response = await server.executeOperation({ query: match, variables: { id: 1 } });
       console.log('response = ', response);
 
       expect(response.data).toBeDefined();
@@ -53,7 +50,10 @@ export const matchTest = (): void => {
                 }
             }
         `;
-      const response = await mutate({ mutation: ADD_MATCH, variables: { data: { id: 3, name: 'match 3' } } });
+      const response = await server.executeOperation({
+        query: ADD_MATCH,
+        variables: { data: { id: 3, name: 'match 3' } },
+      });
       console.log('response = ', response);
 
       expect(response.data).toBeDefined();
@@ -70,8 +70,8 @@ export const matchTest = (): void => {
                 }
             }
         `;
-      const response = await mutate({
-        mutation: UPDATE_MATCH,
+      const response = await server.executeOperation({
+        query: UPDATE_MATCH,
         variables: { data: { id: 1, name: 'match 111112222233333' } },
       });
       console.log('response = ', response);
@@ -89,7 +89,7 @@ export const matchTest = (): void => {
                 }
             }
         `;
-      const response = await mutate({ mutation: DELETE_match, variables: { id: 1 } });
+      const response = await server.executeOperation({ query: DELETE_match, variables: { id: 1 } });
       console.log('response = ', response);
 
       expect(response.data).toBeDefined();

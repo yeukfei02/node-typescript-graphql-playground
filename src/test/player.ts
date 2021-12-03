@@ -1,12 +1,9 @@
 import { ApolloServer } from 'apollo-server';
 import { schema } from '../../api/schema';
 
-import { createTestClient } from 'apollo-server-testing';
-
 const server = new ApolloServer({
   schema,
 });
-const { query, mutate } = createTestClient(server);
 
 export const playerTest = (): void => {
   describe('player test', () => {
@@ -19,7 +16,7 @@ export const playerTest = (): void => {
             }
         }
       `;
-      const response = await query({ query: PLAYERS, variables: {} });
+      const response = await server.executeOperation({ query: PLAYERS, variables: {} });
       console.log('response = ', response);
 
       expect(response.data).toBeDefined();
@@ -36,7 +33,8 @@ export const playerTest = (): void => {
                 }
             }
         `;
-      const response = await query({ query: PLAYER, variables: { id: 2 } });
+
+      const response = await server.executeOperation({ query: PLAYER, variables: { id: 2 } });
       console.log('response = ', response);
 
       expect(response.data).toBeDefined();
@@ -53,7 +51,10 @@ export const playerTest = (): void => {
                 }
             }
         `;
-      const response = await mutate({ mutation: ADD_PLAYER, variables: { data: { id: 3, name: 'player3' } } });
+      const response = await server.executeOperation({
+        query: ADD_PLAYER,
+        variables: { data: { id: 3, name: 'player3' } },
+      });
       console.log('response = ', response);
 
       expect(response.data).toBeDefined();
@@ -70,7 +71,10 @@ export const playerTest = (): void => {
                 }
             }
         `;
-      const response = await mutate({ mutation: UPDATE_PLAYER, variables: { data: { id: 2, name: 'player 22222' } } });
+      const response = await server.executeOperation({
+        query: UPDATE_PLAYER,
+        variables: { data: { id: 2, name: 'player 22222' } },
+      });
       console.log('response = ', response);
 
       expect(response.data).toBeDefined();
@@ -86,7 +90,7 @@ export const playerTest = (): void => {
             }
         }
           `;
-      const response = await mutate({ mutation: DELETE_PLAYER, variables: { id: 1 } });
+      const response = await server.executeOperation({ query: DELETE_PLAYER, variables: { id: 1 } });
       console.log('response = ', response);
 
       expect(response.data).toBeDefined();
