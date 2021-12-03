@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.20](https://github.com/yeukfei02/node-typescript-graphql-playground/compare/v0.1.19...v0.1.20) (2021-12-03)
+
 ### [0.1.19](https://github.com/yeukfei02/node-typescript-graphql-playground/compare/v0.1.18...v0.1.19) (2021-08-07)
 
 
