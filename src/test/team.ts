@@ -1,100 +1,91 @@
-import { ApolloServer } from 'apollo-server';
-import { schema } from '../../api/schema';
+import { GraphQLClient, gql } from 'graphql-request';
 
-import { createTestClient } from 'apollo-server-testing';
-
-const server = new ApolloServer({
-  schema,
-});
-const { query, mutate } = createTestClient(server);
+const rootUrl = 'https://node-ts-graphql-playground.herokuapp.com';
+const graphQLClient = new GraphQLClient(rootUrl);
 
 export const teamTest = (): void => {
   describe('team test', () => {
     test('teams test', async () => {
-      const TEAMS = `
+      const TEAMS = gql`
         query teams {
-            teams {
-                id
-                name
-            }
+          teams {
+            id
+            name
+          }
         }
       `;
-      const response = await query({ query: TEAMS, variables: {} });
+      const response = await graphQLClient.request(TEAMS);
       console.log('response = ', response);
 
-      expect(response.data).toBeDefined();
-      expect(response.data.teams).toBeDefined();
-      expect(response.errors).toBeUndefined();
+      expect(response).toBeDefined();
+      expect(response.teams).toBeDefined();
     });
 
     test('team test', async () => {
-      const team = `
-        query team ($id: Int!) {
-            team (id: $id) {
-                id
-                name
-            }
+      const TEAM = gql`
+        query team($id: Int!) {
+          team(id: $id) {
+            id
+            name
+          }
         }
-        `;
-      const response = await query({ query: team, variables: { id: 2 } });
+      `;
+      const variables = { id: 2 };
+      const response = await graphQLClient.request(TEAM, variables);
       console.log('response = ', response);
 
-      expect(response.data).toBeDefined();
-      expect(response.data.team).toBeDefined();
-      expect(response.errors).toBeUndefined();
+      expect(response).toBeDefined();
+      expect(response.team).toBeDefined();
     });
 
     test('add team test', async () => {
-      const ADD_TEAM = `
-        mutation addTeam ($data: CreateTeam!) {
-            addTeam (data: $data) {
-                id
-                name
-            }
+      const ADD_TEAM = gql`
+        mutation addTeam($data: CreateTeam!) {
+          addTeam(data: $data) {
+            id
+            name
+          }
         }
-        `;
-      const response = await mutate({ mutation: ADD_TEAM, variables: { data: { id: 3, name: 'team 3' } } });
+      `;
+      const variables = { data: { id: 3, name: 'team 3' } };
+      const response = await graphQLClient.request(ADD_TEAM, variables);
       console.log('response = ', response);
 
-      expect(response.data).toBeDefined();
-      expect(response.data.addTeam).toBeDefined();
-      expect(response.errors).toBeUndefined();
+      expect(response).toBeDefined();
+      expect(response.addTeam).toBeDefined();
     });
 
     test('update team test', async () => {
-      const UPDATE_TEAM = `
-        mutation updateTeam ($data: UpdateTeam!) {
-            updateTeam (data: $data) {
-                id
-                name
-            }
+      const UPDATE_TEAM = gql`
+        mutation updateTeam($data: UpdateTeam!) {
+          updateTeam(data: $data) {
+            id
+            name
+          }
         }
-        `;
-      const response = await mutate({
-        mutation: UPDATE_TEAM,
-        variables: { data: { id: 1, name: 'team 111112222233333' } },
-      });
+      `;
+      const variables = { data: { id: 1, name: 'team 111112222233333' } };
+      const response = await graphQLClient.request(UPDATE_TEAM, variables);
       console.log('response = ', response);
 
-      expect(response.data).toBeDefined();
-      expect(response.data.updateTeam).toBeDefined();
-      expect(response.errors).toBeUndefined();
+      expect(response).toBeDefined();
+      expect(response.updateTeam).toBeDefined();
     });
 
     test('delete team test', async () => {
-      const DELETE_TEAM = `
-        mutation deleteTeam ($id: Int!) {
-            deleteTeam (id: $id) {
-                id
-            }
+      const DELETE_TEAM = gql`
+        mutation deleteTeam($id: Int!) {
+          deleteTeam(id: $id) {
+            id
+          }
         }
-        `;
-      const response = await mutate({ mutation: DELETE_TEAM, variables: { id: 1 } });
+      `;
+      const variables = { id: 1 };
+      const response = await graphQLClient.request(DELETE_TEAM, variables);
       console.log('response = ', response);
 
-      expect(response.data).toBeDefined();
-      expect(response.data.deleteTeam).toBeDefined();
-      expect(response.errors).toBeUndefined();
+      expect(response).toBeDefined();
+      expect(response.deleteTeam).toBeDefined();
     });
   });
 };
