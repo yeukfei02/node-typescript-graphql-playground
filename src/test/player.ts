@@ -1,97 +1,95 @@
-import { ApolloServer } from 'apollo-server';
-import { schema } from '../../api/schema';
+import { GraphQLClient, gql } from 'graphql-request';
 
-import { createTestClient } from 'apollo-server-testing';
-
-const server = new ApolloServer({
-  schema,
-});
-const { query, mutate } = createTestClient(server);
+const rootUrl = 'https://node-ts-graphql-playground.herokuapp.com';
+const graphQLClient = new GraphQLClient(rootUrl);
 
 export const playerTest = (): void => {
   describe('player test', () => {
     test('players test', async () => {
-      const PLAYERS = `
+      const PLAYERS = gql`
         query players {
-            players {
-                id
-                name
-            }
+          players {
+            id
+            name
+          }
         }
       `;
-      const response = await query({ query: PLAYERS, variables: {} });
+
+      const response = await graphQLClient.request(PLAYERS);
       console.log('response = ', response);
 
-      expect(response.data).toBeDefined();
-      expect(response.data.players).toBeDefined();
-      expect(response.errors).toBeUndefined();
+      expect(response).toBeDefined();
+      expect(response.players).toBeDefined();
     });
 
     test('player test', async () => {
-      const PLAYER = `
-            query player ($id: Int!) {
-                player (id: $id) {
-                    id
-                    name
-                }
-            }
-        `;
-      const response = await query({ query: PLAYER, variables: { id: 2 } });
+      const PLAYER = gql`
+        query player($id: Int!) {
+          player(id: $id) {
+            id
+            name
+          }
+        }
+      `;
+
+      const variables = { id: 2 };
+      const response = await graphQLClient.request(PLAYER, variables);
       console.log('response = ', response);
 
-      expect(response.data).toBeDefined();
-      expect(response.data.player).toBeDefined();
-      expect(response.errors).toBeUndefined();
+      expect(response).toBeDefined();
+      expect(response.player).toBeDefined();
     });
 
     test('add player test', async () => {
-      const ADD_PLAYER = `
-            mutation addPlayer ($data: CreatePlayer!) {
-                addPlayer (data: $data) {
-                    id
-                    name
-                }
-            }
-        `;
-      const response = await mutate({ mutation: ADD_PLAYER, variables: { data: { id: 3, name: 'player3' } } });
+      const ADD_PLAYER = gql`
+        mutation addPlayer($data: CreatePlayer!) {
+          addPlayer(data: $data) {
+            id
+            name
+          }
+        }
+      `;
+
+      const variables = { data: { id: 3, name: 'player3' } };
+      const response = await graphQLClient.request(ADD_PLAYER, variables);
       console.log('response = ', response);
 
-      expect(response.data).toBeDefined();
-      expect(response.data.addPlayer).toBeDefined();
-      expect(response.errors).toBeUndefined();
+      expect(response).toBeDefined();
+      expect(response.addPlayer).toBeDefined();
     });
 
     test('update player test', async () => {
-      const UPDATE_PLAYER = `
-            mutation updatePlayer ($data: UpdatePlayer!) {
-                updatePlayer (data: $data) {
-                    id
-                    name
-                }
-            }
-        `;
-      const response = await mutate({ mutation: UPDATE_PLAYER, variables: { data: { id: 2, name: 'player 22222' } } });
+      const UPDATE_PLAYER = gql`
+        mutation updatePlayer($data: UpdatePlayer!) {
+          updatePlayer(data: $data) {
+            id
+            name
+          }
+        }
+      `;
+
+      const variables = { data: { id: 2, name: 'player 22222' } };
+      const response = await graphQLClient.request(UPDATE_PLAYER, variables);
       console.log('response = ', response);
 
-      expect(response.data).toBeDefined();
-      expect(response.data.updatePlayer).toBeDefined();
-      expect(response.errors).toBeUndefined();
+      expect(response).toBeDefined();
+      expect(response.updatePlayer).toBeDefined();
     });
 
     test('delete player test', async () => {
-      const DELETE_PLAYER = `
-        mutation deletePlayer ($id: Int!) {
-            deletePlayer (id: $id) {
-                id
-            }
+      const DELETE_PLAYER = gql`
+        mutation deletePlayer($id: Int!) {
+          deletePlayer(id: $id) {
+            id
+          }
         }
-          `;
-      const response = await mutate({ mutation: DELETE_PLAYER, variables: { id: 1 } });
+      `;
+      const variables = { id: 1 };
+      const response = await graphQLClient.request(DELETE_PLAYER, variables);
       console.log('response = ', response);
 
-      expect(response.data).toBeDefined();
-      expect(response.data.deletePlayer).toBeDefined();
-      expect(response.errors).toBeUndefined();
+      expect(response).toBeDefined();
+      expect(response.deletePlayer).toBeDefined();
     });
   });
 };

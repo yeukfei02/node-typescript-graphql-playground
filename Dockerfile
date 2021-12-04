@@ -1,4 +1,4 @@
-FROM node:12.19.0
+FROM node:14.17.0-slim
 
 RUN mkdir -p /usr/src/app
 

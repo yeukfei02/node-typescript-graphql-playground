@@ -9,7 +9,7 @@ api url: <https://node-ts-graphql-playground.herokuapp.com/>
 ## Requirement
 
 - install yarn
-- install node (v12+)
+- install node (v14+)
 
 ## Testing and run
 
